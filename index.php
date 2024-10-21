@@ -61,7 +61,9 @@
                         </li>
 
                         <li class="slide md:w-[290px] xl:w-[325px] 6xl:h-[766px] 6xl:w-[673px]">
-                            <img class="" src="./assets/images/review/slider.webp" alt="pic" />
+                            <img class=""
+                                src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/review/slider.webp"
+                                alt="pic" />
                         </li>
                     </ul>
                 </div>
@@ -76,8 +78,9 @@
                             ./assets/images/review/bg-md.webp    1x,
                             ./assets/images/review/bg-md@2x.webp 2x
                             " />
-                    <img class="w-full" src="./assets/images/review/bg.webp"
-                        srcset="./assets/images/review/bg@2x.webp 2x" alt="" loading="lazy" />
+                    <img class="w-full" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/review/bg.webp"
+                        srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/review/bg@2x.webp 2x" alt=""
+                        loading="lazy" />
                 </picture>
             </div>
         </section>
@@ -107,8 +110,10 @@
                         class="slide rounded-[10px] border border-black p-[30px] md:w-[50%] 6xl:w-[620px] mdOnly:last:hidden">
                         <div class="md:mb-5 md:flex 6xl:mb-[30px]">
                             <picture class="block md:mr-5 smOnly:mb-4">
-                                <img width="120" class="h-auto 6xl:w-[180px]" src="./assets/images/lectors/img-1.webp"
-                                    srcset="./assets/images/lectors/img-1@2x.webp 2x" alt="pic" loading="lazy" />
+                                <img width="120" class="h-auto 6xl:w-[180px]"
+                                    src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lectors/img-1.webp"
+                                    srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lectors/img-1@2x.webp 2x"
+                                    alt="pic" loading="lazy" />
                             </picture>
 
                             <div class="fmd:flex gap-1 md:flex-col 6xl:pt-[50px]">
@@ -121,15 +126,18 @@
                             </div>
                         </div>
 
-                        <img src="./assets/images/lectors/1.webp" alt="icon" />
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lectors/1.webp"
+                            alt="icon" />
                     </li>
 
                     <li
                         class="slide rounded-[10px] border border-black p-[30px] md:w-[50%] 6xl:w-[620px] mdOnly:last:hidden">
                         <div class="md:mb-5 md:flex 6xl:mb-[30px]">
                             <picture class="block md:mr-5 smOnly:mb-4">
-                                <img width="120" class="h-auto 6xl:w-[180px]" src="./assets/images/lectors/img-2.webp"
-                                    srcset="./assets/images/lectors/img-2@2x.webp 2x" alt="pic" loading="lazy" />
+                                <img width="120" class="h-auto 6xl:w-[180px]"
+                                    src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lectors/img-2.webp"
+                                    srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lectors/img-2@2x.webp 2x"
+                                    alt="pic" loading="lazy" />
                             </picture>
 
                             <div class="fmd:flex gap-1 md:flex-col 6xl:pt-[50px]">
@@ -143,15 +151,18 @@
                             </div>
                         </div>
 
-                        <img src="./assets/images/lectors/2.webp" alt="icon" />
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lectors/2.webp"
+                            alt="icon" />
                     </li>
 
                     <li
                         class="slide rounded-[10px] border border-black p-[30px] md:w-[50%] 6xl:w-[620px] mdOnly:last:hidden">
                         <div class="md:mb-5 md:flex 6xl:mb-[30px]">
                             <picture class="block md:mr-5 smOnly:mb-4">
-                                <img width="120" class="h-auto 6xl:w-[180px]" src="./assets/images/lectors/img-3.webp"
-                                    srcset="./assets/images/lectors/img-3@2x.webp 2x" alt="pic" loading="lazy" />
+                                <img width="120" class="h-auto 6xl:w-[180px]"
+                                    src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lectors/img-3.webp"
+                                    srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lectors/img-3@2x.webp 2x"
+                                    alt="pic" loading="lazy" />
                             </picture>
 
                             <div class="fmd:flex gap-1 md:flex-col 6xl:pt-[50px]">
@@ -165,15 +176,18 @@
                             </div>
                         </div>
 
-                        <img src="./assets/images/lectors/3.webp" alt="icon" />
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lectors/3.webp"
+                            alt="icon" />
                     </li>
 
                     <li
                         class="slide rounded-[10px] border border-black p-[30px] md:w-[50%] 6xl:w-[620px] mdOnly:last:hidden">
                         <div class="md:mb-5 md:flex 6xl:mb-[30px]">
                             <picture class="block md:mr-5 smOnly:mb-4">
-                                <img width="120" class="h-auto 6xl:w-[180px]" src="./assets/images/lectors/img-3.webp"
-                                    srcset="./assets/images/lectors/img-3@2x.webp 2x" alt="pic" loading="lazy" />
+                                <img width="120" class="h-auto 6xl:w-[180px]"
+                                    src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lectors/img-3.webp"
+                                    srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lectors/img-3@2x.webp 2x"
+                                    alt="pic" loading="lazy" />
                             </picture>
 
                             <div class="fmd:flex gap-1 md:flex-col 6xl:pt-[50px]">
@@ -187,7 +201,8 @@
                             </div>
                         </div>
 
-                        <img src="./assets/images/lectors/3.webp" alt="icon" />
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lectors/3.webp"
+                            alt="icon" />
                     </li>
                 </ul>
 
@@ -195,11 +210,15 @@
                 <div
                     class="slider-btn__wrappe mb-[70px] flex items-center justify-center gap-4 md:mb-[30px] md:justify-end xl:mb-[50px]">
                     <button type="button" class="slider-btn tutors-prev-but">
-                        <img width="14" height="25" src="./assets/images/lectors/arrow-left.webp" alt="arrow" />
+                        <img width="14" height="25"
+                            src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lectors/arrow-left.webp"
+                            alt="arrow" />
                     </button>
 
                     <button type="button" class="slider-btn tutors-next-but">
-                        <img width="14" height="25" src="./assets/images/lectors/arrow-right.webp" alt="arrow" />
+                        <img width="14" height="25"
+                            src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lectors/arrow-right.webp"
+                            alt="arrow" />
                     </button>
                 </div>
 
@@ -248,8 +267,9 @@
                         " />
                     <img width="395" height="165"
                         class="md:h-[126px] md:w-[707px] xl:h-[165px] xl:w-[1217px] 6xl:w-[1777px]"
-                        src="./assets/images/choice/sm.webp" srcset="./assets/images/choice/sm@2x.webp 2x" alt="pic"
-                        loading="lazy" />
+                        src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/choice/sm.webp"
+                        srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/choice/sm@2x.webp 2x"
+                        alt="pic" loading="lazy" />
                 </picture>
 
                 <!-- button -->
@@ -349,8 +369,10 @@
                                 ./assets/images/register/register-bg-md.webp    1x,
                                 ./assets/images/register/register-bg-md@2x.webp 2x
                                 " />
-                            <img class="w-full" src="./assets/images/register/register-bg.webp"
-                                srcset="./assets/images/register/register-bg@2x.webp 2x" alt="" loading="lazy" />
+                            <img class="w-full"
+                                src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/register/register-bg.webp"
+                                srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/register/register-bg@2x.webp 2x"
+                                alt="" loading="lazy" />
                         </picture>
                     </div>
                 </div>
@@ -914,5 +936,59 @@
         </div>
     </footer>
 </body>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const sliderTutors = document.querySelector(".tutors-slider");
+
+    if (sliderTutors) {
+        $(sliderTutors).slick({
+            autoplay: false,
+            mobileFirst: true,
+            lazyLoad: "ondemand",
+            dots: false,
+            arrows: true,
+            slidesToShow: 2.5,
+            slidesToScroll: 1,
+            speed: 400,
+            cssEase: "linear",
+            centerPadding: 0,
+            nextArrow: $(".tutors-next-but"),
+            prevArrow: $(".tutors-prev-but"),
+
+            responsive: [{
+                    breakpoint: 1280,
+                    settings: {
+                        slidesToShow: 3,
+                    },
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 3.5,
+                    },
+                },
+            ],
+        });
+    }
+
+    const sliderReviews = document.querySelector(".reviews-slider");
+    if (sliderReviews) {
+        $(sliderReviews).slick({
+            autoplay: false,
+            mobileFirst: true,
+            lazyLoad: "ondemand",
+            dots: false,
+            arrows: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            speed: 400,
+            cssEase: "linear",
+            centerPadding: 0,
+            nextArrow: $(".reviews-next-but"),
+        });
+    }
+});
+</script>
 
 </html>
