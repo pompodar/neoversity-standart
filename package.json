@@ -1,0 +1,25 @@
+{
+    "name": "neoversity-standart",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "sass src/css/style.scss styles.css && npx postcss styles.css -o styles.css",
+        "watch": "sass --watch src/css/style.scss styles.css && npx postcss --watch styles.css -o styles.css",
+        "serve": "browser-sync start --proxy 'http://test-1.local/' --files '**/*.php, **/*.css, **/*.js'",
+        "watch:serve": "concurrently \"sass --watch src/css/style.scss style.css\" \"postcss --watch style.css -o style.css\" \"browser-sync start --proxy 'http://test-1.local/' --files '**/*.html, **/*.php, **/*.css, **/*.scss, **/*.js'\""
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "autoprefixer": "^10.4.20",
+        "postcss": "^8.4.47",
+        "sass": "^1.80.3",
+        "tailwindcss": "^3.4.14"
+    },
+    "devDependencies": {
+        "concurrently": "^9.0.1",
+        "postcss-cli": "^11.0.0"
+    }
+}
