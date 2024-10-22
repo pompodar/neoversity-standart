@@ -23,11 +23,97 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <?php wp_head(); ?>
+    <style>
+        .container {
+  padding-inline: 33px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 1920px) {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 1919px) {
+    max-width: 1280px;
+  }
+
+  @media (max-width: 1279px) {
+    max-width: 768px;
+  }
+
+  @media (max-width: 768px) {
+    padding-inline: 21px;
+    max-width: 360px;
+  }
+}
+</style>
 </head>
 
 <body>
+    
     <main>
-        <section class="reviews pb-[80px] relative 6xl:pb-[120px] overflow-hidden">
+
+        <section class="career mt-[100px] mb-[100px] md:mb-[150px] md:mt-[150px] xl:mb-[174px] xl:mt-[174px] 6xl:mt-[150px] 6xl:mb-[150px]">
+            <div class="container xl:relative">
+                <!-- wrapper -->
+                <div class="md:flex md:flex-col">
+                    <!-- left-side -->
+                    <div class="mb-[50px] md:flex md:justify-between xl:flex-col xl:items-end xl:mb-0 xl:h-[313px] 6xl:h-[477px]">
+                        <div class="xl:w-[695px]">
+                        <!-- title -->
+                        <h2
+                            class="font-unbounded text-[24px] md:mb-0 uppercase tracking-[-0.08em] text-[#31343a] md:text-[32px] md:tracking-[-0.06em]  xl:text-[52px] xl:leading-[48px] xl:tracking-[-0.04em] 6xl:text-[60px] 6xl:leading-[65px] 6xl:tracking-[-0.03em] xl:mb-10">
+                            <span class="block pl-[100px] md:pl-[60px] xl:pl-[230px]">// Акредитована</span> <span
+                                class="block tracking-[-0.09em] md:tracking-[-0.06em] xl:tracking-[-0.04em] 6xl:tracking-[-0.03em]">
+                                вища IT-освіта</span>
+                        </h2>
+
+                         <!-- text -->
+                        <div
+                            class="flex h-[73px] flex-col justify-end border-l border-black font-montserrat text-[14px] uppercase leading-[14px] text-[#31343a] xl:h-[178px] xl:text-[16px] xl:leading-[16px] smOnly:mb-10 mdOnly:border-none">
+                            <p class="pl-4 md:max-w-[275px] md:pl-0 xl:pl-8 6xl:max-w-[310px] 6xl:leading-[18px]">
+                                Офіційний статус студента, диплом та всі документи, залежно від обраного ступеню
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- right-side -->
+            <div class="md:flex md:justify-between xl:h-0">
+                <picture class=" xl:mb-[50px] 6xl:mb-[90px] mb-[50px] block">
+                    <source media="(min-width: 1920px)" type="image/webp" srcset="
+                        <?php echo get_stylesheet_directory_uri(); ?>/assets/images/career/career-lg.png    1x,
+                        <?php echo get_stylesheet_directory_uri(); ?>/assets/images/career/career-lg@2x.png 2x
+                        " />
+                    <source media="(min-width: 1280px)" type="image/webp" srcset="
+                        <?php echo get_stylesheet_directory_uri(); ?>/assets/images/career/career-xl.png    1x,
+                        <?php echo get_stylesheet_directory_uri(); ?>/assets/images/career/career-xl@2x.png 2x
+                        " />
+                    <source media="(min-width: 768px)" type="image/webp" srcset="
+                        <?php echo get_stylesheet_directory_uri(); ?>/assets/images/career/career-md.png    1x,
+                        <?php echo get_stylesheet_directory_uri(); ?>/assets/images/career/career-md@2x.png 2x
+                        " />
+                    <img width="318" height="213"
+                        class="md:h-[233px] md:w-[348px] xl:h-[313px] xl:w-[468px] 6xl:w-[714px] 6xl:h-[477px] xl:absolute xl:top-0"
+                        src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/career/career-sm.png"
+                        srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/career/career-sm@2x.png 2x"
+                        alt="pic" loading="lazy" />
+                </picture>
+
+                <!-- modal-button -->
+                <div class="flex justify-center mdOnly:justify-start md:flex-col md:justify-end xl:absolute xl:right-[33px] xl:bottom-0">
+                    <button
+                        class="w-full bg-[#2400ff] px-10 py-6 font-montserrat text-[16px] font-semibold text-white md:h-[70px] md:w-[290px] xl:w-[312px] 6xl:h-[86px] 6xl:w-[356px]"
+                        type="button">
+                        / Подивитись документи
+                    </button>
+                </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews pb-[80px] md:mb-[75px] md:mt-[75px] relative 6xl:pb-[120px] xl:mb-[87px] xl:mt-[87px] overflow-hidden mt-[50px] 6xl:mt-[75px] 6xl:mb-[75px]">
             <div class="container">
                 <!-- wrapper -->
                 <div class="md:flex md:justify-between">
@@ -43,7 +129,7 @@
 
                         <!-- text -->
                         <div
-                            class="flex h-[73px] flex-col justify-end border-l border-black font-montserrat text-[14px] uppercase leading-[14px] text-[#31343a] xl:h-[178px] xl:text-[16px] xl:leading-[16px] smOnly:mb-10 mdOnly:border-none">
+                            class="flex h-[73px] mb-[35px] flex-col justify-end border-l border-black font-montserrat text-[14px] uppercase leading-[14px] text-[#31343a] xl:h-[178px] xl:text-[16px] xl:leading-[16px] smOnly:mb-10 mdOnly:border-none">
                             <p class="pl-4 md:max-w-[275px] md:pl-0 xl:pl-8 6xl:max-w-[310px] 6xl:leading-[18px]">
                                 нас обирають айтівці, що вже працюють в топ компаніях та продовжують прагнути більшого
                             </p>
@@ -51,9 +137,10 @@
                     </div>
 
                     <!-- right-side -->
+                   <div>
                     <!-- slider -->
                     <ul
-                        class="reviews-slider relative z-30 md:w-[290px] xl:mr-[105px] xl:w-[325px] 6xl:mr-[190px] 6xl:h-[766px] 6xl:w-[673px]">
+                        class="reviews-slider mb-[35px] relative z-30 md:w-[290px] xl:mr-[105px] xl:w-[325px] 6xl:mr-[190px] 6xl:h-[766px] 6xl:w-[673px]">
                         <li class="slide md:w-[290px] xl:w-[325px] 6xl:h-[766px] 6xl:w-[673px]">
                             <img class="md:w-[290px] xl:w-[325px] 6xl:h-[766px] 6xl:w-[673px]"
                                 src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/review/slider.webp"
@@ -66,17 +153,34 @@
                                 alt="pic" />
                         </li>
                     </ul>
+                    
+                    <!-- buttons -->
+                <div
+                    class="slider-btn__wrappe mb-[70px] flex items-center justify-center gap-4 md:mb-[30px] md:justify-end xl:mb-[50px]">
+                    <button type="button" class="slider-btn reviews-prev-but">
+                        <img width="14" height="25"
+                            src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lectors/arrow-left.webp"
+                            alt="arrow" />
+                    </button>
+
+                    <button type="button" class="slider-btn reviews-next-but">
+                        <img width="14" height="25"
+                            src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lectors/arrow-right.webp"
+                            alt="arrow" />
+                    </button>
+                </div>
+                   </div>
                 </div>
 
                 <!-- bg -->
                 <picture class="absolute bottom-0 left-0 z-10 w-full 6xl:h-[193px]">
                     <source media="(min-width: 1280px)" type="image/webp" srcset="
-                            ./assets/images/review/bg-xl.webp    1x,
-                            ./assets/images/review/bg-xl@2x.webp 2x
+                            <?php echo get_stylesheet_directory_uri(); ?>/assets/images/review/bg-xl.webp    1x,
+                            <?php echo get_stylesheet_directory_uri(); ?>/assets/images/review/bg-xl@2x.webp 2x
                             " />
                     <source media="(min-width: 768px)" type="image/webp" srcset="
-                            ./assets/images/review/bg-md.webp    1x,
-                            ./assets/images/review/bg-md@2x.webp 2x
+                            <?php echo get_stylesheet_directory_uri(); ?>/assets/images/review/bg-md.webp    1x,
+                            <?php echo get_stylesheet_directory_uri(); ?>/assets/images/review/bg-md@2x.webp 2x
                             " />
                     <img class="w-full" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/review/bg.webp"
                         srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/review/bg@2x.webp 2x" alt=""
@@ -85,7 +189,7 @@
             </div>
         </section>
 
-        <section class="tutors">
+        <section class="tutors mt-[60px] mdOnly:mt-20 6xl:mt-[140px] mb-10 md:mb-[55px] xl:mb-[45px] 6xl:mb-[110px]">
             <div class="container">
                 <div class="mb-5 md:mb-[45px] xl:mb-[90px] 6xl:mb-[70px] 6xl:flex 6xl:items-center">
                     <h2
@@ -107,7 +211,7 @@
                 <!-- slider -->
                 <ul class="tutors-slider mb-[35px] gap-4 md:mb-[35px] md:flex 6xl:justify-between 6xl:gap-0">
                     <li
-                        class="slide rounded-[10px] border border-black p-[30px] md:w-[50%] 6xl:w-[620px] mdOnly:last:hidden">
+                        class="mr-3 md:h-[260px]   slide rounded-[10px] border border-black p-[30px] md:w-[50%] 6xl:w-[620px] mdOnly:last:hidden">
                         <div class="md:mb-5 md:flex 6xl:mb-[30px]">
                             <picture class="block md:mr-5 smOnly:mb-4">
                                 <img width="120" class="h-auto 6xl:w-[180px]"
@@ -131,7 +235,7 @@
                     </li>
 
                     <li
-                        class="slide rounded-[10px] border border-black p-[30px] md:w-[50%] 6xl:w-[620px] mdOnly:last:hidden">
+                        class="mr-3 md:h-[260px]   slide rounded-[10px] border border-black p-[30px] md:w-[50%] 6xl:w-[620px] mdOnly:last:hidden">
                         <div class="md:mb-5 md:flex 6xl:mb-[30px]">
                             <picture class="block md:mr-5 smOnly:mb-4">
                                 <img width="120" class="h-auto 6xl:w-[180px]"
@@ -156,32 +260,7 @@
                     </li>
 
                     <li
-                        class="slide rounded-[10px] border border-black p-[30px] md:w-[50%] 6xl:w-[620px] mdOnly:last:hidden">
-                        <div class="md:mb-5 md:flex 6xl:mb-[30px]">
-                            <picture class="block md:mr-5 smOnly:mb-4">
-                                <img width="120" class="h-auto 6xl:w-[180px]"
-                                    src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lectors/img-3.webp"
-                                    srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lectors/img-3@2x.webp 2x"
-                                    alt="pic" loading="lazy" />
-                            </picture>
-
-                            <div class="fmd:flex gap-1 md:flex-col 6xl:pt-[50px]">
-                                <h3
-                                    class="mb-[2px] font-unbounded text-[24px] uppercase leading-none text-[#31343a] 6xl:mb-5">
-                                    Антон Чорний
-                                </h3>
-                                <p class="text-[16px] text-[#aab3b9] smOnly:mb-20">CEO <span
-                                        class="block text-black">GoIT
-                                        Global</span></p>
-                            </div>
-                        </div>
-
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lectors/3.webp"
-                            alt="icon" />
-                    </li>
-
-                    <li
-                        class="slide rounded-[10px] border border-black p-[30px] md:w-[50%] 6xl:w-[620px] mdOnly:last:hidden">
+                        class="mr-3 md:h-[260px]   slide rounded-[10px] border border-black p-[30px] md:w-[50%] 6xl:w-[620px] mdOnly:last:hidden">
                         <div class="md:mb-5 md:flex 6xl:mb-[30px]">
                             <picture class="block md:mr-5 smOnly:mb-4">
                                 <img width="120" class="h-auto 6xl:w-[180px]"
@@ -233,7 +312,7 @@
             </div>
         </section>
 
-        <section class="choice relative">
+        <section class="choice relative mt-[40px] md:mt-[55px] xl:mt-[55px] 6xl:mt-[110px] mb-10 md:mb-[55px] xl:mb-[60px] 6xl:mb-[110px]">
             <div class="container">
                 <!-- title -->
                 <h2
@@ -254,16 +333,16 @@
                 <!-- img -->
                 <picture class="mb-[35px] block xl:mb-[50px] 6xl:mb-[90px]">
                     <source media="(min-width: 1920px)" type="image/webp" srcset="
-                        ./assets/images/choice/6xl.webp    1x,
-                        ./assets/images/choice/6xl@2x.webp 2x
+                        <?php echo get_stylesheet_directory_uri(); ?>/assets/images/choice/6xl.webp    1x,
+                        <?php echo get_stylesheet_directory_uri(); ?>/assets/images/choice/6xl@2x.webp 2x
                         " />
                     <source media="(min-width: 1280px)" type="image/webp" srcset="
-                        ./assets/images/choice/xl.webp    1x,
-                        ./assets/images/choice/xl@2x.webp 2x
+                        <?php echo get_stylesheet_directory_uri(); ?>/assets/images/choice/xl.webp    1x,
+                        <?php echo get_stylesheet_directory_uri(); ?>/assets/images/choice/xl@2x.webp 2x
                         " />
                     <source media="(min-width: 768px)" type="image/webp" srcset="
-                        ./assets/images/choice/md.webp    1x,
-                        ./assets/images/choice/md@2x.webp 2x
+                        <?php echo get_stylesheet_directory_uri(); ?>/assets/images/choice/md.webp    1x,
+                        <?php echo get_stylesheet_directory_uri(); ?>/assets/images/choice/md@2x.webp 2x
                         " />
                     <img width="395" height="165"
                         class="md:h-[126px] md:w-[707px] xl:h-[165px] xl:w-[1217px] 6xl:w-[1777px]"
@@ -948,7 +1027,7 @@ document.addEventListener("DOMContentLoaded", function() {
             lazyLoad: "ondemand",
             dots: false,
             arrows: true,
-            slidesToShow: 2.5,
+            slidesToShow: 1.02,
             slidesToScroll: 1,
             speed: 400,
             cssEase: "linear",
@@ -965,7 +1044,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 {
                     breakpoint: 768,
                     settings: {
-                        slidesToShow: 3.5,
+                        slidesToShow: 1.9,
+                        mobileFirst: false,
                     },
                 },
             ],
@@ -986,6 +1066,7 @@ document.addEventListener("DOMContentLoaded", function() {
             cssEase: "linear",
             centerPadding: 0,
             nextArrow: $(".reviews-next-but"),
+            prevArrow: $(".reviews-prev-but"),
         });
     }
 });
