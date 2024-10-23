@@ -46,6 +46,27 @@
     max-width: 360px;
   }
 }
+
+.backdrop {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+ .backdrop.is-hidden {
+    @apply pointer-events-none invisible opacity-0;
+  }
+
+.is-hidden & {
+    @apply opacity-0 duration-300 ease-linear;
+  }
+
+  .font-unbounded{
+    font-family: 'Unbounded', sans-serif;
+  }
+
+  .font-montserrat{
+    font-family: 'Montserrat', sans-serif;
+  }
 </style>
 </head>
 
@@ -59,18 +80,18 @@
                 <div class="md:flex md:flex-col">
                     <!-- left-side -->
                     <div class="mb-[50px] md:flex md:justify-between xl:flex-col xl:items-end xl:mb-0 xl:h-[313px] 6xl:h-[477px]">
-                        <div class="xl:w-[695px]">
+                        <div class="xl:w-[695px] md:flex md:w-full md:justify-between">
                         <!-- title -->
                         <h2
                             class="font-unbounded text-[24px] md:mb-0 uppercase tracking-[-0.08em] text-[#31343a] md:text-[32px] md:tracking-[-0.06em]  xl:text-[52px] xl:leading-[48px] xl:tracking-[-0.04em] 6xl:text-[60px] 6xl:leading-[65px] 6xl:tracking-[-0.03em] xl:mb-10">
-                            <span class="block pl-[100px] md:pl-[60px] xl:pl-[230px]">// Акредитована</span> <span
+                            <span class="block pl-[70px] md:pl-[60px] xl:pl-[230px]">// Акредитована</span> <span
                                 class="block tracking-[-0.09em] md:tracking-[-0.06em] xl:tracking-[-0.04em] 6xl:tracking-[-0.03em]">
                                 вища IT-освіта</span>
                         </h2>
 
                          <!-- text -->
                         <div
-                            class="flex h-[73px] flex-col justify-end border-l border-black font-montserrat text-[14px] uppercase leading-[14px] text-[#31343a] xl:h-[178px] xl:text-[16px] xl:leading-[16px] smOnly:mb-10 mdOnly:border-none">
+                            class="flex md:justify-start h-[73px] flex-col justify-end border-l md:border-none border-black font-montserrat text-[14px] uppercase leading-[14px] text-[#31343a] xl:h-[178px] xl:text-[16px] xl:leading-[16px] smOnly:mb-10 mdOnly:border-none">
                             <p class="pl-4 md:max-w-[275px] md:pl-0 xl:pl-8 6xl:max-w-[310px] 6xl:leading-[18px]">
                                 Офіційний статус студента, диплом та всі документи, залежно від обраного ступеню
                             </p>
@@ -80,7 +101,7 @@
 
                     <!-- right-side -->
             <div class="md:flex md:justify-between xl:h-0">
-                <picture class=" xl:mb-[50px] 6xl:mb-[90px] mb-[50px] block">
+                <picture class=" xl:mb-[50px] 6xl:mb-[90px] mb-[50px] md:mb-0 block">
                     <source media="(min-width: 1920px)" type="image/webp" srcset="
                         <?php echo get_stylesheet_directory_uri(); ?>/assets/images/career/career-lg.png    1x,
                         <?php echo get_stylesheet_directory_uri(); ?>/assets/images/career/career-lg@2x.png 2x
@@ -103,7 +124,7 @@
                 <!-- modal-button -->
                 <div class="flex justify-center mdOnly:justify-start md:flex-col md:justify-end xl:absolute xl:right-[33px] xl:bottom-0">
                     <button
-                        class="w-full bg-[#2400ff] px-10 py-6 font-montserrat text-[16px] font-semibold text-white md:h-[70px] md:w-[290px] xl:w-[312px] 6xl:h-[86px] 6xl:w-[356px]"
+                        class="w-full bg-[#2400ff] px-10 py-6 font-montserrat text-[16px] font-semibold text-white md:h-[70px] md:w-[300px] xl:w-[312px] 6xl:h-[86px] 6xl:w-[356px]"
                         type="button">
                         / Подивитись документи
                     </button>
@@ -113,7 +134,7 @@
             </div>
         </section>
 
-        <section class="reviews pb-[80px] md:mb-[75px] md:mt-[75px] relative 6xl:pb-[120px] xl:mb-[87px] xl:mt-[87px] overflow-hidden mt-[50px] 6xl:mt-[75px] 6xl:mb-[75px]">
+        <section class="reviews pb-[80px] md:pb-0 md:mb-[80px] md:mt-[80px] relative 6xl:pb-[120px] xl:mb-[87px] xl:mt-[87px] overflow-hidden mt-[50px] 6xl:mt-[75px] 6xl:mb-[75px]">
             <div class="container">
                 <!-- wrapper -->
                 <div class="md:flex md:justify-between">
@@ -129,7 +150,7 @@
 
                         <!-- text -->
                         <div
-                            class="flex h-[73px] mb-[35px] flex-col justify-end border-l border-black font-montserrat text-[14px] uppercase leading-[14px] text-[#31343a] xl:h-[178px] xl:text-[16px] xl:leading-[16px] smOnly:mb-10 mdOnly:border-none">
+                            class="flex h-[73px] md:h-auto md:mb-0 mb-[35px] flex-col justify-end md:border-none border-l border-black font-montserrat text-[14px] uppercase leading-[14px] text-[#31343a] xl:h-[178px] xl:text-[16px] xl:leading-[16px] smOnly:mb-10 mdOnly:border-none">
                             <p class="pl-4 md:max-w-[275px] md:pl-0 xl:pl-8 6xl:max-w-[310px] 6xl:leading-[18px]">
                                 нас обирають айтівці, що вже працюють в топ компаніях та продовжують прагнути більшого
                             </p>
@@ -156,7 +177,7 @@
                     
                     <!-- buttons -->
                 <div
-                    class="slider-btn__wrappe mb-[70px] flex items-center justify-center gap-4 md:mb-[30px] md:justify-end xl:mb-[50px]">
+                    class="slider-btn__wrappe flex items-center justify-center gap-4 md:mb-[30px] md:justify-end xl:mb-[50px]">
                     <button type="button" class="slider-btn reviews-prev-but">
                         <img width="14" height="25"
                             src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/lectors/arrow-left.webp"
@@ -173,7 +194,7 @@
                 </div>
 
                 <!-- bg -->
-                <picture class="absolute bottom-0 left-0 z-10 w-full 6xl:h-[193px]">
+                <picture class="absolute bottom-0  left-0 z-10 w-full 6xl:h-[193px]">
                     <source media="(min-width: 1280px)" type="image/webp" srcset="
                             <?php echo get_stylesheet_directory_uri(); ?>/assets/images/review/bg-xl.webp    1x,
                             <?php echo get_stylesheet_directory_uri(); ?>/assets/images/review/bg-xl@2x.webp 2x
@@ -189,17 +210,17 @@
             </div>
         </section>
 
-        <section class="tutors mt-[60px] mdOnly:mt-20 6xl:mt-[140px] mb-10 md:mb-[55px] xl:mb-[45px] 6xl:mb-[110px]">
+        <section class="tutors mt-[60px] mdOnly:mt-20 6xl:mt-[140px] mb-10 md:mb-[100px] xl:mb-[45px] 6xl:mb-[110px]">
             <div class="container">
                 <div class="mb-5 md:mb-[45px] xl:mb-[90px] 6xl:mb-[70px] 6xl:flex 6xl:items-center">
                     <h2
-                        class="font-unbounded text-[24px] uppercase tracking-[-0.08em] text-[#31343a] md:text-[32px] md:tracking-[-0.06em] xl:text-[52px] xl:leading-[48px] xl:tracking-[-0.04em] 6xl:mr-[70px] 6xl:text-[60px] 6xl:leading-[65px] 6xl:tracking-[-0.03em]">
-                        Зростайте в оточенні <span class="block pl-8 md:pl-[150px] xl:pl-[60px] 6xl:pl-[360px]">
+                        class="font-unbounded text-[23px] mb-5 uppercase tracking-[-0.08em] text-[#31343a] md:text-[32px] md:tracking-[-0.06em] xl:text-[52px] xl:leading-[48px] xl:tracking-[-0.04em] 6xl:mr-[70px] 6xl:text-[60px] 6xl:leading-[65px] 6xl:tracking-[-0.03em]">
+                        Зростайте в оточенні <span class="block pl-6 md:pl-[150px] xl:pl-[60px] 6xl:pl-[360px]">
                             успішних айтівців //</span>
                     </h2>
 
                     <!-- text -->
-                    <div class="mb-[60px] md:mb-[35px] md:flex md:justify-center xl:hidden 6xl:block">
+                    <div class="mb-[60px] md:mb-[35px] md:ml-[160px] xl:hidden 6xl:block">
                         <p
                             class="font-montserrat text-[14px] uppercase leading-[14px] text-[#31343a] md:w-[318px] xl:text-[16px] xl:leading-[16px] 6xl:w-[350px]">
                             Ретельно добираємо викладачів-практиків. Регулярно запрошуємо зіркових лекторів IT,
@@ -366,7 +387,7 @@
             <div class="6xl:px-[70px] container px-[10px]">
                 <!-- block -->
                 <div
-                    class="register-wrapper 6xl:py-[75px] 6xl:pl-[112px] 6xl:pr-[315px] relative rounded-[10px] border border-black bg-transparent px-[30px] py-[50px] md:flex md:justify-between md:px-[40px] xl:py-[65px] xl:pl-[65px] xl:pr-[195px]">
+                    class="register-wrapper  6xl:py-[75px] 6xl:pl-[112px] 6xl:pr-[315px] relative rounded-[10px] border border-black bg-transparent px-[30px] py-[50px] md:flex md:justify-between md:px-[40px] xl:py-[65px] xl:pl-[65px] xl:pr-[195px]">
                     <!-- left-side -->
                     <div class="6xl:w-[700px] md:w-[345px] xl:w-[545px]">
                         <!-- title -->
@@ -377,7 +398,7 @@
 
                         <!-- text -->
                         <div
-                            class="register-wrapper__text flex h-[130px] flex-col justify-end border-l border-black font-montserrat text-[14px] font-bold uppercase leading-[14px] text-[#31343a] xl:h-[192px] xl:text-[16px] xl:leading-[16px] smOnly:mb-10">
+                            class="register-wrapper__text mb-10 flex h-[130px] flex-col justify-end border-l border-black font-montserrat text-[14px] font-bold uppercase leading-[14px] text-[#31343a] xl:h-[192px] xl:text-[16px] xl:leading-[16px] smOnly:mb-10">
                             <p class="mb-3 pl-4 xl:mb-5 xl:pl-8">Який перший крок?</p>
                             <p class="max-w-[270px] pl-4 font-normal xl:max-w-[320px] xl:pl-8">
                                 Залиште свої дані — отримайте особисту консультацію безкоштовно
@@ -441,12 +462,12 @@
                         <!-- img -->
                         <picture class="absolute bottom-0 left-0 z-10 w-full">
                             <source media="(min-width: 1280px)" type="image/webp" srcset="
-                                ./assets/images/register/register-bg-xl.webp    1x,
-                                ./assets/images/register/register-bg-xl@2x.webp 2x
+                                <?php echo get_stylesheet_directory_uri(); ?>/assets/images/register/register-bg-xl.webp    1x,
+                                <?php echo get_stylesheet_directory_uri(); ?>/assets/images/register/register-bg-xl@2x.webp 2x
                                 " />
                             <source media="(min-width: 768px)" type="image/webp" srcset="
-                                ./assets/images/register/register-bg-md.webp    1x,
-                                ./assets/images/register/register-bg-md@2x.webp 2x
+                                <?php echo get_stylesheet_directory_uri(); ?>/assets/images/register/register-bg-md.webp    1x,
+                                <?php echo get_stylesheet_directory_uri(); ?>/assets/images/register/register-bg-md@2x.webp 2x
                                 " />
                             <img class="w-full"
                                 src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/register/register-bg.webp"
@@ -455,7 +476,7 @@
                         </picture>
                     </div>
                 </div>
-        </section>
+        </section>       
     </main>
 
     <footer class="border-t">
@@ -1014,6 +1035,152 @@
             </div>
         </div>
     </footer>
+
+    
+    <div class="backdrop hidden smOnly:px-5 visible fixed inset-0 z-[100] flex overflow-auto opacity-100 duration-300 ease-linear">
+        <!-- popup -->
+       <div class="modal hidden h-[679px] md:h-[417px] xl:h-[505px] xl:max-w-[983px] relative bg-white text-black m-auto flex w-full max-w-[336px] translate-x-0    translate-y-0 flex-col justify-evenly px-[30px] py-8 pt-[60px] opacity-100 duration-300 ease-linear md:max-w-[707px] md:p-[50px] md:pt-[60px] xl:pt-[90px]">
+           <button
+                     class="modal-close-btn absolute top-5 right-5 cursor-pointer font-montserrat"
+                     type="button"
+                     data-modal-close
+                   >
+                   <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/cross.png" alt="">
+           </button>
+                   <div
+                       class="register-wrapper 6xl:py-[75px] 6xl:pl-[112px] 6xl:pr-[315px] relative  bg-transparent md:flex md:justify-between">
+                       <!-- left-side -->
+                       <div class="6xl:w-[700px] md:w-[339px] xl:w-[545px] mb-[45px] md:mb-0">
+                        <!-- title -->
+                        <h2
+                            class="mr-[-30px] md:mr-0 font-unbounded 6xl:text-[60px] 6xl:leading-[65px] 6xl:tracking-[-0.03em] font-unbounded text-[18px] font-normal uppercase tracking-[-0.06em] text-[#31343a] md:text-[21px]  md:tracking-[-0.09em] xl:text-[32px]  xl:tracking-[-0.06em] ">
+                            <Бронюйте безкоштовну консультацію та кращі <span class="pl-[65px] md:pl-[105px]">умови вступу //</span>
+                        </h2>
+
+                        <!-- text -->
+                        <div
+                            class="register-wrapper__text flex h-[84px] flex-col justify-end border-l border-black font-montserrat text-[14px] font-bold uppercase leading-[14px] text-[#31343a] xl:text-[16px] xl:leading-[16px] smOnly:mb-10">
+                            <p class="max-w-[270px] pl-4 font-normal xl:max-w-[320px] xl:pl-8">
+                                Відповімо на всі питання і допоможемо обрати кращий напрям розвитку карʼєри
+                            </p>
+                        </div>
+        </div>
+
+        <!-- right-side -->
+        <div class="6xl:w-[421px] md:w-[245px] xl:w-[312px]">
+                        <!-- form -->
+                        <form class="register-wrapper__form 6xl:gap-4 flex flex-col gap-[10px]">
+                            <!-- fields -->
+                            <label for="userName">
+                                <input
+                                    class="register-input 6xl:h-[67px] h-[42px] xl:h-[50px] w-full border border-black px-[26px] py-4 placeholder-[#aab3b9] placeholder:text-[12px] xl:placeholder:text-[16px] mdOnly:h-[41px]"
+                                    id="userName" type="text" name="userName" placeholder="Ім'я" />
+                            </label>
+
+                            <label for="userPhone">
+                                <input
+                                    class="register-input 6xl:h-[67px] h-[42px] xl:h-[50px] w-full border border-black px-[26px] py-4 placeholder-[#aab3b9] placeholder:text-[12px] xl:placeholder:text-[16px] mdOnly:h-[41px]"
+                                    id="userPhone" type="tel" name="userPhone" placeholder="Телефон" />
+                            </label>
+
+                            <label for="userEmail">
+                                <input
+                                    class="register-input 6xl:h-[67px] h-[42px] xl:h-[50px] w-full border border-black px-[26px] py-4 placeholder-[#aab3b9] placeholder:text-[12px] xl:placeholder:text-[16px] mdOnly:h-[41px]"
+                                    id="userEmail" type="email" name="userEmail" placeholder="Email" />
+                            </label>
+
+                            <!-- text-checkbox -->
+                            <p
+                                class="font-unbounded text-[12px] font-medium tracking-[0.02em] text-black xl:text-[14px] xl:tracking-[0.02em] smOnly:mb-2">
+                                Як вам зручніше спілкуватись?
+                            </p>
+
+                            <div class="flex items-center">
+                                <input id="checkbox1" type="checkbox"
+                                    class="h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-500" />
+                                <label for="checkbox1"
+                                    class="ml-2 font-montserrat text-[12px] text-black xl:text-[14px]">зателефонуйте
+                                    мені</label>
+                            </div>
+
+                            <div class="flex items-center">
+                                <input id="checkbox2" type="checkbox"
+                                    class="h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-500" />
+                                <label for="checkbox2"
+                                    class="ml-2 font-montserrat text-[12px] text-black xl:text-[14px]">напишіть в
+                                    месенджер</label>
+                            </div>
+
+                            <!-- button -->
+                            <button
+                                class="6xl:mb-[2px] relative z-30 mt-2 bg-[#2400ff] px-10 py-6 font-montserrat text-[16px] font-semibold text-white md:mb-[-15px] xl:mb-[-5px]"
+                                type="submit">
+                                / Відправити
+                            </button>
+                        </form>
+
+                        
+        </div>
+      </div>
+
+       <!-- img -->
+                        <picture class="absolute bottom-0 left-0 z-10 w-full">
+                            <source media="(min-width: 1280px)" type="image/webp" srcset="
+                                <?php echo get_stylesheet_directory_uri(); ?>/assets/images/register/register-bg-xl.webp    1x,
+                                <?php echo get_stylesheet_directory_uri(); ?>/assets/images/register/register-bg-xl@2x.webp 2x
+                                " />
+                            <source media="(min-width: 768px)" type="image/webp" srcset="
+                                <?php echo get_stylesheet_directory_uri(); ?>/assets/images/register/register-bg-md.webp    1x,
+                                <?php echo get_stylesheet_directory_uri(); ?>/assets/images/register/register-bg-md@2x.webp 2x
+                                " />
+                            <img class="w-full"
+                                src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/register/register-bg.webp"
+                                srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/register/register-bg@2x.webp 2x"
+                                alt="" loading="lazy" />
+                        </picture>
+         </div>
+        
+           <!-- modal -->
+           <div class="text-center hidden  h-[461px] md:h-[353px] xl:h-[395px] xl:max-w-[845px] relative bg-white text-black m-auto w-full max-w-[336px] translate-x-0    translate-y-0 flex-col justify-evenly px-[10px] pt-[160px] opacity-100 duration-300 ease-linear md:max-w-[707px] md:p-[50px] md:pt-[90px] xl:pt-[90px]">
+        <button
+                     class="modal-close-btn absolute top-5 right-5 cursor-pointer"
+                     type="button"
+                     data-modal-close
+                   >
+                   <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/cross.png" alt="">
+        </button>   
+
+
+        <div class="w-full flex justify-center mb-[60px]">
+        <h2 class="font-unbounded max-w-[210px] xl:max-w-[380px] xl:text-[32px]  xl:tracking-[-0.06em] md:max-w-[240px] md:text-[21px] text-[18px] md:tracking-[-0.09em] uppercase tracking-[-0.06em] text-[#31343a]">дякуємо ОЧІКУЙТЕ ДЗВІНОК</h2>
+        </div>
+
+        <!-- modal-button -->
+                <div class="flex justify-center mdOnly:justify-start relative z-10 ">
+                    <button
+                        class="w-full font-montserrat cursor-pointer bg-[#2400ff] xl:w-[312px]   text-[16px] font-semibold text-white md:h-[70px] md:w-[245px]  h-[70px]"
+                        type="button">
+                        / Повернутися на головну
+                    </button>
+                </div>
+
+        <!-- img -->
+                        <picture class="absolute bottom-0 left-0 z-0 w-full">
+                            <source media="(min-width: 1280px)" type="image/webp" srcset="
+                                <?php echo get_stylesheet_directory_uri(); ?>/assets/images/register/register-bg-xl.webp    1x,
+                                <?php echo get_stylesheet_directory_uri(); ?>/assets/images/register/register-bg-xl@2x.webp 2x
+                                " />
+                            <source media="(min-width: 768px)" type="image/webp" srcset="
+                                <?php echo get_stylesheet_directory_uri(); ?>/assets/images/register/register-bg-md.webp    1x,
+                                <?php echo get_stylesheet_directory_uri(); ?>/assets/images/register/register-bg-md@2x.webp 2x
+                                " />
+                            <img class="w-full"
+                                src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/register/register-bg.webp"
+                                srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/register/register-bg@2x.webp 2x"
+                                alt="" loading="lazy" />
+                        </picture>
+    </div>
+        
 </body>
 
 <script>
