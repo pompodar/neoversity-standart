@@ -134,6 +134,7 @@
                         <div class="flex justify-center mdOnly:justify-start md:flex-col md:justify-end xl:absolute xl:right-[33px] xl:bottom-0">
                             <button
                                 class="w-full bg-[#2400ff] px-10 py-6 font-montserrat text-[16px] font-semibold text-white md:h-[70px] md:w-[300px] xl:w-[312px] 6xl:h-[86px] 6xl:w-[356px]"
+                                data-modal-open
                                 type="button">
                                 / Подивитись документи
                             </button>
@@ -335,6 +336,7 @@
                 <div class="flex justify-center mdOnly:justify-start">
                     <button
                         class="w-full bg-[#2400ff] px-10 py-6 font-montserrat text-[16px] font-semibold text-white md:h-[70px] md:w-[290px] xl:w-[312px] 6xl:h-[86px] 6xl:w-[356px]"
+
                         type="button">
                         / Більше про викладачів
                     </button>
@@ -385,6 +387,7 @@
                 <div class="md:flex md:justify-start xl:mr-[30%] xl:justify-end 6xl:mr-0 6xl:justify-center">
                     <button
                         class="h-[70px] w-full bg-[#2400ff] px-10 py-6 font-montserrat text-[16px] font-semibold text-white md:w-[290px] xl:w-[312px] 6xl:h-[86px] 6xl:w-[356px]"
+
                         type="button">
                         / Дивитись історію
                     </button>
@@ -1046,8 +1049,8 @@
     </footer>
 
     <!-- modals -->
-    <div class="backdrop is-hidden smOnly:px-5 visible fixed inset-0 z-[100] flex overflow-auto opacity-100 duration-300 ease-linear">
-        <!-- popup -->
+    <div class="backdrop is-hidden smOnly:px-5 visible fixed inset-0 z-[100] flex overflow-auto opacity-100 duration-300 ease-linear" data-backdrop>
+        <!-- modal -->
         <div class="modal is-hidden h-[679px] md:h-[417px] xl:h-[505px] xl:max-w-[983px] relative bg-white text-black m-auto flex w-full max-w-[336px] translate-x-0    translate-y-0 flex-col justify-evenly px-[30px] py-8 pt-[60px] opacity-100 duration-300 ease-linear md:max-w-[707px] md:p-[50px] md:pt-[60px] xl:pt-[90px]">
             <button
                 class="modal-close-btn absolute top-5 right-5 cursor-pointer font-montserrat"
@@ -1149,7 +1152,7 @@
             </picture>
         </div>
 
-        <!-- modal -->
+        <!-- popup-thanks -->
         <div class="modal text-center is-hidden  h-[461px] md:h-[353px] xl:h-[395px] xl:max-w-[845px] relative bg-white text-black m-auto w-full max-w-[336px] translate-x-0    translate-y-0 flex-col justify-evenly px-[10px] pt-[160px] opacity-100 duration-300 ease-linear md:max-w-[707px] md:p-[50px] md:pt-[90px] xl:pt-[90px]">
             <button
                 class="modal-close-btn absolute top-5 right-5 cursor-pointer"
@@ -1190,7 +1193,7 @@
         </div>
 
         <!-- popup-certificate -->
-        <div class="modal is-hidden md:px-[50px] xl:pb-0 md:pb-10 xl:max-w-[983px] relative bg-white text-black m-auto flex w-full max-w-[336px] translate-x-0  translate-y-0 flex-col justify-evenly px-[15px] py-[100px] opacity-100 duration-300 ease-linear md:max-w-[707px]  md:pt-[100px] xl:pt-[90px]">
+        <div class="modal is-hidden md:px-[50px] xl:pb-0 md:pb-10 xl:max-w-[983px] relative bg-white text-black m-auto flex w-full max-w-[336px] translate-x-0  translate-y-0 flex-col justify-evenly px-[15px] py-[100px] opacity-100 duration-300 ease-linear md:max-w-[707px]  md:pt-[100px] xl:pt-[90px]" data-modal>
             <button
                 class="modal-close-btn absolute top-5 right-5 cursor-pointer font-montserrat"
                 type="button"
@@ -1281,6 +1284,7 @@
             </picture>
         </div>
 
+
 </body>
 
 <script>
@@ -1355,6 +1359,109 @@
             });
         }
     });
+
+    /**
+     * if you want to create another modal, add your selectors as shown in the example below
+     */
+    // createModal(
+    //   "[data-example-modal]",
+    //   "[data-example-openModalBtn]",
+    //   "[data-example-closeModalBtn]",
+    // );
+
+    // default modal
+    createModal("[data-modal]", "[data-modal-open]", "[data-modal-close]", "[data-backdrop]");
+
+    function createModal(modal, openModalBtn, closeModalBtn, backdrop) {
+        const refs = {
+            body: document.querySelector("body"),
+            modal: document.querySelector(modal),
+            openModalBtn: document.querySelectorAll(openModalBtn),
+            closeModalBtn: document.querySelectorAll(closeModalBtn),
+            backdrop: document.querySelector(backdrop), // Найдём backdrop
+        };
+
+        let previousActiveElement = null;
+
+        // Error checking
+        if (!refs.modal || !refs.closeModalBtn || refs.openModalBtn.length === 0 || !refs.backdrop) {
+            console.error(
+                "createModal function error: One or more modal elements not found",
+            );
+            return;
+        }
+
+        document.addEventListener("keydown", handleKey);
+        refs.modal.addEventListener("mousedown", handleClose);
+        refs.backdrop.addEventListener("mousedown", handleClose); // Закрытие при клике на backdrop
+        refs.closeModalBtn.forEach(function(btn) {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                previousActiveElement = document.activeElement; // Store the element that triggered the modal
+                toggleModal();
+            });
+        });
+        refs.openModalBtn.forEach(function(btn) {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                previousActiveElement = document.activeElement; // Store the element that triggered the modal
+                toggleModal();
+            });
+        });
+
+        function handleKey(e) {
+            if (!refs.modal.classList.contains("is-hidden")) {
+                if (e.key === "Escape") {
+                    toggleModal();
+                } else if (e.key === "Tab") {
+                    focusTrap(e);
+                }
+            }
+        }
+
+        function handleClose(e) {
+            if (e.target === e.currentTarget) {
+                toggleModal();
+            }
+        }
+
+        function toggleModal() {
+            const isHidden = refs.modal.classList.toggle("is-hidden");
+            refs.backdrop.classList.toggle("is-hidden"); // Управляем классом для backdrop
+            refs.body.classList.toggle("scroll-hidden");
+            refs.modal.setAttribute("aria-hidden", isHidden);
+
+            if (!isHidden) {
+                // Focus the first interactive element in the modal
+                const focusableElements = refs.modal.querySelectorAll(
+                    'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])'
+                );
+                if (focusableElements.length) {
+                    focusableElements[0].focus();
+                }
+            } else if (previousActiveElement) {
+                // Return focus to the element that triggered the modal when closing
+                previousActiveElement.focus();
+            }
+        }
+
+        // Function to trap focus inside the modal
+        function focusTrap(e) {
+            const focusableElements = refs.modal.querySelectorAll(
+                'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])'
+            );
+            const firstFocusableElement = focusableElements[0];
+            const lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+            if (e.shiftKey && document.activeElement === firstFocusableElement) {
+                e.preventDefault();
+                lastFocusableElement.focus();
+            } else if (!e.shiftKey && document.activeElement === lastFocusableElement) {
+                e.preventDefault();
+                firstFocusableElement.focus();
+            }
+        }
+    }
 </script>
 
 </html>
